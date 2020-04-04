@@ -119,32 +119,34 @@ class App extends Component {
 											</Segment>
 										) : (
 											<Item.Group divided>
-												{podcast.length ? (
-													this.renderPodcast(data)
-												) : (
-													<Item key='0'>
-														<Placeholder as={Item.Image} style={{ height: 150, width: 150 }}>
-															<Placeholder.Image />
-														</Placeholder>
+												{podcast.length
+													? this.renderPodcast(data)
+													: _.range(0, 2).map((item, index) => {
+															return (
+																<Item key={index}>
+																	<Placeholder as={Item.Image} style={{ height: 150, width: 150 }}>
+																		<Placeholder.Image />
+																	</Placeholder>
 
-														<Item.Content verticalAlign='middle'>
-															<Item.Description>
-																<Placeholder>
-																	<Placeholder.Header>
-																		<Placeholder.Line />
-																		<Placeholder.Line />
-																	</Placeholder.Header>
-																</Placeholder>
-															</Item.Description>
-															<Item.Extra>
-																<Button primary size='small' disabled>
-																	Lihat
-																	<Icon name='right chevron' />
-																</Button>
-															</Item.Extra>
-														</Item.Content>
-													</Item>
-												)}
+																	<Item.Content verticalAlign='middle'>
+																		<Item.Description>
+																			<Placeholder>
+																				<Placeholder.Header>
+																					<Placeholder.Line />
+																					<Placeholder.Line />
+																				</Placeholder.Header>
+																			</Placeholder>
+																		</Item.Description>
+																		<Item.Extra>
+																			<Button primary size='small' disabled>
+																				Lihat
+																				<Icon name='right chevron' />
+																			</Button>
+																		</Item.Extra>
+																	</Item.Content>
+																</Item>
+															);
+													  })}
 											</Item.Group>
 										)}
 									</Grid.Column>
