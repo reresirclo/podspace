@@ -80,7 +80,7 @@ class App extends Component {
 					<Grid centered columns={2}>
 						<Grid.Row>
 							<Grid.Column>
-								<Image src={logo} centered size="small" className='App-logo' alt='logo' />
+								<Image src={logo} centered size='small' className='App-logo' alt='logo' />
 							</Grid.Column>
 						</Grid.Row>
 						<Switch>
